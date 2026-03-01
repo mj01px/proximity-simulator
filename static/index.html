@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Proximity Simulator</title>
+  <link rel="stylesheet" href="/static/styles.css?v=4" />
+</head>
+
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="icon" aria-hidden="true">◎</div>
+      <div>
+        <div class="title">Proximity Simulator</div>
+        <div class="subtitle">Virtual sensor (mouse) • Progressive LEDs • Relay / Motor</div>
+      </div>
+    </div>
+
+    <div class="right">
+      <span id="wsStatus" class="tag neutral">Connecting…</span>
+      <button id="reconnectBtn" class="btn" type="button">Reconnect</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <article class="card">
+        <div class="cardHead">
+          <div>
+            <div class="cardTitle">Telemetry</div>
+            <div class="cardSub">Real-time updates via WebSocket</div>
+          </div>
+          <div class="sep"></div>
+        </div>
+
+        <div class="metrics">
+          <div class="metric">
+            <div class="k">Distance</div>
+            <div id="distStatus" class="v">—</div>
+          </div>
+          <div class="metric">
+            <div class="k">Relay</div>
+            <div id="relayStatus" class="v">—</div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="blockTitle">LEDs</div>
+          <div id="ledBar" class="ledRow" aria-label="LED bar"></div>
+          <div class="hint">Closer → more LEDs activated</div>
+        </div>
+
+        <div class="block">
+          <div class="blockTitle">Motor (simulated)</div>
+          <div class="motorRow">
+            <div id="motor" class="motor" aria-label="Motor"></div>
+            <div>
+              <div class="k">Status</div>
+              <div id="motorText" class="motorText off">OFF</div>
+              <div class="hint">Relay controls motor state</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          <b>How to use:</b> Move your mouse inside the area on the right.
+          The fixed point is the sensor; the moving point represents the object.
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cardTitle">Sensor Area</div>
+        <div class="cardSub">Move the mouse to simulate proximity</div>
+
+        <div id="house" class="field" role="application" aria-label="Sensor area">
+          <canvas id="fx" class="fx"></canvas>
+          <div id="sensor" class="sensor" title="Sensor"></div>
+          <div id="object" class="object" title="Object"></div>
+          <div class="legend">
+            <span class="dot sensorDot"></span> sensor
+            <span class="dot objDot"></span> object
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="/static/app.js?v=4"></script>
+</body>
+</html>
