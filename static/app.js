@@ -184,7 +184,7 @@ function drawFx(sx, sy, cm, level) {
   const radius = 40 + 240 * t;
 
   const g = fxCtx.createRadialGradient(sx, sy, 10, sx, sy, radius);
-  g.addColorStop(0, `rgba(37,99,235,${0.18 * t})`);
+  g.addColorStop(0, `rgba(37,99,235,${0.68 * t})`);
   g.addColorStop(1, "rgba(37,99,235,0)");
 
   fxCtx.fillStyle = g;
