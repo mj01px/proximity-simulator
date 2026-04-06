@@ -113,7 +113,8 @@ uvicorn backend.main:app --reload --port 8000  # → http://localhost:8000
 <div align="center">
   <br/>
   <sub>
-    Built by <a href="https://github.com/mj01px"><strong>Mauro Junior</strong></a>
+    Built by <a href="https://github.com/mj01px"><strong>Mauro Junior</strong></a> and
+    <a href="https://github.com/JulioFranz"><strong>Julio Franz</strong></a>
     &nbsp;·&nbsp;
     <a href="https://www.linkedin.com/in/mauroapjunior/">LinkedIn</a>
   </sub>
