@@ -34,7 +34,7 @@ proximity_simulator = {
 }
 ```
 
-**Proximity Simulator** is an interactive proximity sensor simulation built with FastAPI and WebSockets. Mouse movement drives distance detection in real time — triggering progressive LED activation, relay logic, and motor state — all synchronized between frontend and backend through a live WebSocket connection.
+**Proximity Simulator** is an interactive proximity sensor simulation built with FastAPI and WebSockets. Mouse movement drives distance detection in real time  triggering progressive LED activation, relay logic, and motor state — all synchronized between frontend and backend through a live WebSocket connection.
 
 ```
 proximity-simulator/
