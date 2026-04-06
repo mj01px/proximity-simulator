@@ -1,135 +1,121 @@
-# Proximity Sensor Simulator
+<div align="center">
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![WebSocket](https://img.shields.io/badge/WebSocket-4A4A4A?style=for-the-badge&logo=websocket&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+<br/>
 
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=30&pause=1000&color=00BFA5&center=true&vCenter=true&width=600&lines=Proximity+Simulator;Detect.+React.+Simulate." alt="Typing SVG" />
+</a>
 
-Interactive proximity sensor simulation built with **FastAPI +
-WebSockets**.\
-The system simulates distance detection, progressive LED activation, and
-a relay-controlled motor in real time through an interactive UI.
+<br/>
 
-------------------------------------------------------------------------
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/WebSocket-4A4A4A?style=flat-square&logo=websocket&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square"/>
+</p>
 
-## Overview
+</div>
 
-This project demonstrates a real-time frontend ↔ backend communication
-model using WebSockets.
+<br/>
 
-The frontend simulates a proximity sensor using mouse movement: -
-Distance is calculated dynamically - LED levels increase progressively -
-A relay is triggered when a critical threshold is reached - A motor
-state is controlled by relay logic - State is synchronized with the
-backend
+---
 
-------------------------------------------------------------------------
+## `~/about`
 
-## Core Concepts Demonstrated
-
--   Real-time WebSocket communication
--   Event-driven state updates
--   Threshold-based control logic
--   Frontend-backend synchronization
--   IoT-inspired simulation architecture
-
-------------------------------------------------------------------------
-
-##  Architecture
-
-### Backend
-
--   FastAPI
--   WebSocket endpoint (`/ws`)
--   Static file serving
-
-### Frontend
-
--   HTML + CSS (custom UI)
--   Vanilla JavaScript
--   Canvas-based visual effects
--   Progressive LED rendering
--   Relay & motor state simulation
-
-------------------------------------------------------------------------
-
-##  Communication Flow
-
-1.  User moves the mouse inside the sensor area.
-2.  Distance is calculated (pixels → simulated cm).
-3.  LED level is derived from predefined thresholds.
-4.  Relay state is determined.
-5.  State is sent to backend via WebSocket.
-6.  Backend echoes authoritative state back to the client.
-
-------------------------------------------------------------------------
-
-## Relay Logic
-
-``` text
-If distance <= RELAY_ON_CM → Relay ON
-Else → Relay OFF
+```python
+proximity_simulator = {
+    "type":     "IoT Simulation · Full-Stack",
+    "backend":  ["Python", "FastAPI", "WebSockets"],
+    "frontend": ["HTML5", "CSS", "Vanilla JavaScript", "Canvas API"],
+    "concept":  "Real-time proximity sensor with LEDs, relay, and motor state",
+    "author":   "Mauro Junior · github.com/mj01px",
+}
 ```
 
-LED levels increase progressively as distance decreases.
+**Proximity Simulator** is an interactive proximity sensor simulation built with FastAPI and WebSockets. Mouse movement drives distance detection in real time — triggering progressive LED activation, relay logic, and motor state — all synchronized between frontend and backend through a live WebSocket connection.
 
-------------------------------------------------------------------------
+```
+proximity-simulator/
+├── backend/     # FastAPI server  →  http://localhost:8000
+└── static/      # HTML + CSS + JS frontend
+```
 
-## 🛠 Installation
+---
 
-Clone the repository:
+## `~/features`
 
-``` bash
-git clone https://github.com/YOUR_USERNAME/proximity-simulator.git
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      <b>📡 Simulation</b><br/><br/>
+      <ul>
+        <li>Mouse movement → distance in simulated cm</li>
+        <li>Progressive LED activation by threshold</li>
+        <li>Relay triggered at critical distance</li>
+        <li>Motor state controlled by relay logic</li>
+        <li>Canvas-based visual rendering</li>
+      </ul>
+    </td>
+    <td valign="top" width="50%">
+      <b>⚙️ Architecture</b><br/><br/>
+      <ul>
+        <li>Real-time WebSocket communication (<code>/ws</code>)</li>
+        <li>Event-driven state updates</li>
+        <li>Backend echoes authoritative state to client</li>
+        <li>Static file serving via FastAPI</li>
+        <li>No frontend framework — pure JS</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+**Relay logic:**
+```text
+distance <= RELAY_ON_CM  →  Relay ON  →  Motor ON
+distance >  RELAY_ON_CM  →  Relay OFF →  Motor OFF
+```
+
+---
+
+## `~/getting-started`
+
+```bash
+git clone https://github.com/mj01px/proximity-simulator.git
 cd proximity-simulator
-```
 
-Create a virtual environment:
-
-``` bash
+# Setup
 python -m venv .venv
-```
+.venv\Scripts\activate          # Windows
+source .venv/bin/activate       # Linux / macOS
 
-Activate the environment:
-
-**Windows**
-
-``` bash
-.venv\Scripts\activate
-```
-
-**Mac / Linux**
-
-``` bash
-source .venv/bin/activate
-```
-
-Install dependencies:
-
-``` bash
 pip install -r requirements.txt
+uvicorn backend.main:app --reload --port 8000  # → http://localhost:8000
 ```
 
-Run the server:
+---
 
-``` bash
-uvicorn backend.main:app --reload --port 8000
-```
+## `~/stack`
 
-Open in browser:
+<div align="center">
 
-    http://127.0.0.1:8000
+| Layer | Technologies |
+|---|---|
+| **Backend** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) |
+| **Realtime** | ![WebSocket](https://img.shields.io/badge/WebSocket-4A4A4A?style=flat-square&logo=websocket&logoColor=white) |
+| **Frontend** | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![Canvas API](https://img.shields.io/badge/Canvas_API-4A4A4A?style=flat-square&logo=html5&logoColor=white) |
 
-------------------------------------------------------------------------
+</div>
 
-## Educational Purpose
+---
 
-This project was built as a learning exercise to explore:
-
--   Real-time systems
--   WebSocket communication patterns
--   Simulation logic for embedded/IoT concepts
--   Clean UI implementation without frameworks
-
+<div align="center">
+  <br/>
+  <sub>
+    Built by <a href="https://github.com/mj01px"><strong>Mauro Junior</strong></a>
+    &nbsp;·&nbsp;
+    <a href="https://www.linkedin.com/in/mauroapjunior/">LinkedIn</a>
+  </sub>
+  <br/><br/>
+</div>
